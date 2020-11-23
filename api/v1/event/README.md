@@ -1,9 +1,9 @@
 
-# api/palantir/v1/event/
+# /palantir/api/v1/event/
 looks up events in the database with provided information
 
 ## Resource URL
-api/palantir/v1/event/
+api/palantir/api/v1/event/
 
 ## Resource Information
 |||
@@ -14,7 +14,7 @@ api/palantir/v1/event/
 
 |Method | Description |
 | --- | ---
-| GET | Gets character with ID **id**
+| GET | Gets event with ID **id**
 <!-- | POST | Adds new character
 | DELETE | Sets character **id** to deleted status
 | UPDATE | Updates character record for character with **id** -->
