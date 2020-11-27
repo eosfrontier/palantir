@@ -14,7 +14,7 @@ api/palantir/api/v1/event/
 
 |Method | Description |
 | --- | ---
-| GET | Gets event with ID **id**
+| GET | Gets event data.
 <!-- | POST | Adds new character
 | DELETE | Sets character **id** to deleted status
 | UPDATE | Updates character record for character with **id** -->
@@ -23,6 +23,6 @@ api/palantir/api/v1/event/
 | Name | Description | Required For | Optional For | Example
 |--|--|--|--|--
 token | provides authentication | All Methods | | 
-id | Event ID to GET | | GET | 42
-all_events | Declare this header to retrieve all active events. No value needed. | | GET | 
+id | (OPTIOAL) Event ID to GET | | GET | 42
+all_events | (OPTIONAL) Declare this header to retrieve all active events. No value needed. | | GET | 
 
