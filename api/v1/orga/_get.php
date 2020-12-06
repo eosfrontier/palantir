@@ -31,4 +31,4 @@ if ( isset( $input['event_id'] ) || isset( $input['id'] ) ) {
 
 // Haven't answered a way to access.
 http_response_code( 400 );
-echo json_encode( "You haven't included an 'event_id'." );
+echo json_encode( "You haven't included an 'orga_id'." );
