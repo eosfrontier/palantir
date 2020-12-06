@@ -6,4 +6,5 @@ An API for accessing EventBooking Data as JSON
 | API Endpoint                                  | Supported REST Methods |
 | --------------------------------------------- | ---------------------- |
 | [/palantir/v1/event/](api/v1/event/README.md) | GET                    |
-| [/palantir/v1/orga/](api/v1/orga/README.md) | GET                    |
+| [/palantir/v1/orga/](api/v1/orga/README.md)   | GET                    |
+| [/palantir/v1/page/](api/v1/page/README.md)   | GET                    |
