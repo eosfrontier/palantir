@@ -4,9 +4,9 @@ class event {
 
 	public function get_all() {
 		$stmt = database::$conn->prepare( "SELECT e.id, e.title, e.title_en, orga.name as organisatie, orga.name_en as organization, e.event_date, e.event_end_date, loc.name as location_name, 
-		loc.address as location_address, e.short_description, e.short_description_en, 
-		replace(json_extract(e.custom_fields,'$.slaapen'),'\"','') as sleeping_arrangments, 
-		replace(json_extract(e.custom_fields,'$.genre'),'\"','') as genre, 
+		loc.address as location_address, e.short_description, e.short_description_en, e.event_capacity,
+		replace(json_extract(e.custom_fields,'$.slaapen'),'\"','') as sleeping_arrangements, 
+		replace(json_extract(e.custom_fields,'$.genre'),'\"','') as genre1, 
 		replace(json_extract(e.custom_fields,'$.genre2'),'\"','') as genre2,
 		replace(json_extract(e.custom_fields,'$.genre3'),'\"','') as genre3,
 		replace(json_extract(e.custom_fields,'$.min_age'),'\"','') as min_age,
@@ -24,9 +24,9 @@ class event {
 
 	public function get( $id, $needle ) {
 			$stmt = database::$conn->prepare( "SELECT e.id, e.title, e.title_en, orga.name as organisatie, orga.name_en as organization, e.event_date, e.event_end_date, loc.name as location_name, 
-			loc.address as location_address, e.short_description, e.short_description_en, 
-			replace(json_extract(e.custom_fields,'$.slaapen'),'\"','') as sleeping_arrangments, 
-			replace(json_extract(e.custom_fields,'$.genre'),'\"','') as genre, 
+			loc.address as location_address, e.short_description, e.short_description_en, e.event_capacity,
+			replace(json_extract(e.custom_fields,'$.slaapen'),'\"','') as sleeping_arrangements, 
+			replace(json_extract(e.custom_fields,'$.genre'),'\"','') as genre1, 
 			replace(json_extract(e.custom_fields,'$.genre2'),'\"','') as genre2,
 			replace(json_extract(e.custom_fields,'$.genre3'),'\"','') as genre3,
 			replace(json_extract(e.custom_fields,'$.min_age'),'\"','') as min_age,
