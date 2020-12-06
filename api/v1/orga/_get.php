@@ -1,30 +1,30 @@
 <?php
-if ( isset( $input['all_events'] ) ) {
-	$all_events = $c_fetch->get_all();
-	if ( empty( $all_events ) ) {
+if ( isset( $input['all_orgas'] ) ) {
+	$all_orgas = $c_fetch->get_all();
+	if ( empty( $all_orgas ) ) {
 		http_response_code( 404 );
 		echo json_encode( 'None found.' );
 		die();
 	}
 	http_response_code( 200 );
-	echo json_encode( $all_events );
+	echo json_encode( $all_orgas );
 	die();
 }
 
 
-// CHECK BY event ID
+// CHECK BY orga ID
 
-if ( isset( $input['event_id'] ) || isset( $input['id'] ) ) {
-	$eventid      = isset( $input['event_id'] ) ? $input['event_id'] : ( isset( $input['id'] ) ? $input['id'] : '' );
-	$a_event = $c_fetch->get( $eventid, 'id' );
-	if ( empty( $a_event ) ) {
+if ( isset( $input['orga_id'] ) || isset( $input['id'] ) ) {
+	$orgaid      = isset( $input['orga_id'] ) ? $input['orga_id'] : ( isset( $input['id'] ) ? $input['id'] : '' );
+	$a_orga = $c_fetch->get( $orgaid, 'id' );
+	if ( empty( $a_orga ) ) {
 		http_response_code( 404 );
 		echo json_encode( 'None found.' );
 		die();
 	}
 
 	http_response_code( 200 );
-	echo json_encode( $a_event );
+	echo json_encode( $a_orga );
 	die();
 }
 
