@@ -1,13 +1,13 @@
 <?php
-if ( isset( $input['all_orgas'] ) ) {
-	$all_orgas = $c_fetch->get_all();
-	if ( empty( $all_orgas ) ) {
+if ( isset( $input['all_data'] ) ) {
+	$all_data = $c_fetch->get_all();
+	if ( empty( $all_data ) ) {
 		http_response_code( 404 );
 		echo json_encode( 'None found.' );
 		die();
 	}
 	http_response_code( 200 );
-	echo json_encode( $all_orgas );
+	echo json_encode( $all_data );
 	die();
 }
 

@@ -24,5 +24,5 @@ api/palantir/api/v1/page/
 |--|--|--|--|--
 token | provides authentication | All Methods | | 
 id | (OPTIONAL) page ID to GET | | GET | 42
-all_pages | (OPTIONAL) Declare this header to retrieve all active pages. No value needed. | | GET | 
+all_data | (OPTIONAL) Declare this header to retrieve all active pages. No value needed. | | GET | 
 

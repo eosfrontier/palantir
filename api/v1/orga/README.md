@@ -24,5 +24,5 @@ api/palantir/api/v1/orga/
 |--|--|--|--|--
 token | provides authentication | All Methods | | 
 id | (OPTIONAL) orga ID to GET | | GET | 42
-all_orgas | (OPTIONAL) Declare this header to retrieve all active orgas. No value needed. | | GET | 
+all_data | (OPTIONAL) Declare this header to retrieve all active orgas. No value needed. | | GET | 
 

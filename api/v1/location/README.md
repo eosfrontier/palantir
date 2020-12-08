@@ -24,5 +24,5 @@ api/palantir/api/v1/location/
 |--|--|--|--|--
 token | provides authentication | All Methods | | 
 id | (OPTIONAL) location ID to GET | | GET | 42
-all_locations | (OPTIONAL) Declare this header to retrieve all active locations. No value needed. | | GET | 
+all_data | (OPTIONAL) Declare this header to retrieve all active locations. No value needed. | | GET | 
 

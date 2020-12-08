@@ -24,5 +24,5 @@ api/palantir/api/v1/event/
 |--|--|--|--|--
 token | provides authentication | All Methods | | 
 id | (OPTIONAL) Event ID to GET | | GET | 42
-all_events | (OPTIONAL) Declare this header to retrieve all active events. No value needed. | | GET | 
+all_data | (OPTIONAL) Declare this header to retrieve all active events. No value needed. | | GET | 
 

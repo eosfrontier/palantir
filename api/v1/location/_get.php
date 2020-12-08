@@ -1,13 +1,13 @@
 <?php
-if ( isset( $input['all_locations'] ) ) {
-	$all_locations = $c_fetch->get_all();
-	if ( empty( $all_locations ) ) {
+if ( isset( $input['all_data'] ) ) {
+	$all_data = $c_fetch->get_all();
+	if ( empty( $all_data ) ) {
 		http_response_code( 404 );
 		echo json_encode( 'None found.' );
 		die();
 	}
 	http_response_code( 200 );
-	echo json_encode( $all_locations );
+	echo json_encode( $all_data );
 	die();
 }
 
