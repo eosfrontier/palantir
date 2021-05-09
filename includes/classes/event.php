@@ -16,7 +16,7 @@ class event {
 				left join la_eb_locations loc on loc.id = e.location_id
 				left join la_users usr on usr.id = e.created_by
 				left join la_eb_categories orga on orga.id = e.main_category_id
-				WHERE e.published = 1" );
+				WHERE e.published = 1 AND (substring_index(e.event_date,' ',1) > CURDATE())" );
 		$res  = $stmt->execute();
 		$res  = $stmt->fetchAll( PDO::FETCH_ASSOC );
 		return $res;
