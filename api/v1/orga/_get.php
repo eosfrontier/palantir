@@ -9,9 +9,17 @@ if ( isset( $input['all_data'] ) ) {
 	http_response_code( 200 );
 	echo json_encode( $all_data );
 	die();
+} elseif ( isset( $input['active'] ) ) {
+	$all_data = $c_fetch->get_active();
+	if ( empty( $all_data ) ) {
+		http_response_code( 404 );
+		echo json_encode( 'None found.' );
+		die();
+	}
+	http_response_code( 200 );
+	echo json_encode( $all_data );
+	die();
 }
-
-
 // CHECK BY orga ID
 
 if ( isset( $input['orga_id'] ) || isset( $input['id'] ) ) {
