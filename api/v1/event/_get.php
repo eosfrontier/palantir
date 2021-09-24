@@ -1,6 +1,11 @@
 <?php
 if (isset($input['all_data']) ) {
-    $all_data = $c_fetch->get_all();
+    if (isset($input['language']) && $input['language'] === 'NL') {
+        $all_data = $c_fetch->get_all('nl-NL');
+    }
+    else {
+        $all_data = $c_fetch->get_all('en-GB');
+    }
     if (empty($all_data) ) {
         http_response_code(404);
         echo json_encode('None found.');
@@ -16,7 +21,11 @@ if (isset($input['all_data']) ) {
 
 if (isset($input['event_id']) || isset($input['id']) ) {
     $eventid      = isset($input['event_id']) ? $input['event_id'] : ( isset($input['id']) ? $input['id'] : '' );
-    $a_event = $c_fetch->get($eventid, 'id');
+    if (isset($input['language']) && $input['language'] === 'NL') {
+        $a_event = $c_fetch->get($eventid, 'id', 'nl-NL');
+    } else {
+        $a_event = $c_fetch->get($eventid, 'id', 'en-GB');
+    }
     if (empty($a_event) ) {
         http_response_code(404);
         echo json_encode('None found.');

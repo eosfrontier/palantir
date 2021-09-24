@@ -3,9 +3,9 @@
 class event
 {
 
-    public function get_all()
+    public function get_all($language)
     {
-        $replacements = parse_ini_file("https://manage.larp-agenda.nl/language/en-GB/en-GB.com_eventbooking.ini");
+        $replacements = parse_ini_file("https://manage.larp-agenda.nl/language/$language/$language.com_eventbooking.ini");
         $stmt = database::$conn->prepare(
             "SELECT e.id, e.title, e.title_en, orga.name as organisatie, orga.name_en as organization, orga.id as orga_id, orga.website as orga_website, e.registration_handle_url, e.event_date, e.event_end_date, loc.name as location_name, 
         loc.address as location_address, e.short_description, e.short_description_en, e.event_capacity,
@@ -27,9 +27,9 @@ class event
         return str_replace(array_keys($replacements), array_values($replacements), json_encode($res));
     }
 
-    public function get( $id, $needle )
+    public function get( $id, $needle, $language )
     {
-        $replacements = parse_ini_file("https://manage.larp-agenda.nl/language/en-GB/en-GB.com_eventbooking.ini");
+		$replacements = parse_ini_file("https://manage.larp-agenda.nl/language/$language/$language.com_eventbooking.ini");
         $stmt = database::$conn->prepare(
             "SELECT e.id, e.title, e.title_en, orga.name as organisatie, orga.name_en as organization, orga.id as orga_id, orga.website as orga_website, e.registration_handle_url, e.event_date, e.event_end_date, loc.name as location_name, 
 			loc.address as location_address, e.short_description, e.short_description_en, e.event_capacity,
